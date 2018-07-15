@@ -1,0 +1,36 @@
+#!/bin/bash
+
+process () {
+
+  text="${2,,}"; text="${text//[[:blank:][:punct:]]/}"
+
+  case "$1" in
+
+    encode)
+      echo "$text" | tr 'a-z' "$cypherbet" | fold -w5 | paste -sd' '
+      ;;
+    decode)
+      echo "$text" | tr "$cypherbet" 'a-z'
+      ;;
+
+  esac
+
+}
+
+  for letter in {z..a}; do    # reversabet
+    cypherbet+="$letter"
+  done
+
+if [ -p /dev/stdin ]; then    # read from pipe if used
+  while IFS= read -r line; do # don't let IFS break up lines if it's 
+    process "$1" "$line"      # recieving a file from stdin
+  done
+elif [ -f "./$2" ]; then      # read file as argument
+  while IFS= read -r line; do
+    process "$1" "$line"
+  done < "$2"
+else
+  process "$1" "$2"           # regular string as argument
+fi
+
+exit 0
