@@ -1,4 +1,4 @@
-## Ciphers Category
+# Ciphers Category
 This directory is for different implementations of ciphers
 
 ## Conventions
