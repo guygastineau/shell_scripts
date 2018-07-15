@@ -26,7 +26,7 @@ Please give credit when due. I will try to do the same.
 ## Scope
 This repo shouldn't be taken super seriously
 
-- This repo just a fun place to store shell_scripts and executables
+- This repo is just a fun place to store shell_scripts and executables
   that are convenient or fun.
 - I will make neither considerable effort to standardize beyond the 
   aforementioned guidelines nor to automate the generation of
