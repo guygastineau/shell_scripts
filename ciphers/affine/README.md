@@ -40,6 +40,11 @@ Ciphertext is written out in groups of fixed length, the traditional group
 size being 5 letters, and punctuation is excluded. This is to make it 
 harder to guess things based on word boundaries.
 
+Although I give the full decription function above, the executable named
+affine should encrypt the alphabet and use tr to encode and decode between
+an alphabet and a `cypherbet`. An implementation with both functions in
+bash is ugly and heavier on resources.
+
 ## Examples
 
 - Encoding `test` gives `ybty` with the key a=5 b=7
